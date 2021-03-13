@@ -20,6 +20,12 @@ export class RentalDetailComponent implements OnInit {
   getRentalDetails(){
     this.rentalDetailService.getRentalDetails().subscribe(response=>{
       this.rentals=response.data;
+      this.rentals.forEach(x=>{
+        x.rentDate= new Date(x.rentDate).toLocaleDateString();
+      })
+      // this.rentals.forEach(x=>{
+      //   x.stringDate=new Date( x.rentDate).toLocaleDateString();
+      // })
       this.dataLoaded=true;
     })
   }

@@ -7,6 +7,7 @@ export interface RentalDetail {
   brandName: string;
   colorName: string;
   userName: string;
-  rentDate: Date;
-  returnDate: Date;
+  rentDate: string;
+  returnDate: string;
+  // stringDate:string;
 }
