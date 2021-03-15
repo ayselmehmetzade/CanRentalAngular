@@ -9,5 +9,4 @@ export interface RentalDetail {
   userName: string;
   rentDate: string;
   returnDate: string;
-  // stringDate:string;
 }

@@ -1,0 +1,24 @@
+<!-- <ul class="list-group">
+    <li class="list-group-item" routerLink="/cars">Tüm Araba Açıklamaları</li>
+    <li class="list-group-item" *ngFor="let car of cars">
+        {{car.description}}      
+    </li>
+  </ul> -->
+<table class="table mt-2">
+  <thead>
+    <tr class="table-primary">
+      <th>Car Id</th>
+      <th>Brand Id</th>
+      <th>Model Year</th>
+      <th>Description</th>
+      <th>Daily Price</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let car of cars">
+    <td>{{ car.id }}</td>
+    <td>{{car.brandId}}</td>
+    <td>{{ car.modelYear }}</td>
+    <td>{{ car.description }}</td>
+    <td>{{ car.dailyPrice }}</td>
+  </tr>
+</table>
