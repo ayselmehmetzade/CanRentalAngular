@@ -1,9 +1,3 @@
-<!-- <ul class="list-group">
-    <li class="list-group-item" routerLink="/cars">Tüm Araba Açıklamaları</li>
-    <li class="list-group-item" *ngFor="let car of cars">
-        {{car.description}}      
-    </li>
-  </ul> -->
 <table class="table mt-2">
   <thead>
     <tr class="table-primary">
@@ -14,9 +8,16 @@
       <th>Daily Price</th>
     </tr>
   </thead>
-  <tr *ngFor="let car of cars">
+
+  <!-- data-bs-toggle="modal"
+    data-bs-target="#carImageModal" -->
+  <tr
+    *ngFor="let car of cars"
+    (click)="getCarDetailByCarId(car.id)"
+    routerLink="/cars/carimages/{{car.id}}"
+  >
     <td>{{ car.id }}</td>
-    <td>{{car.brandId}}</td>
+    <td>{{ car.brandId }}</td>
     <td>{{ car.modelYear }}</td>
     <td>{{ car.description }}</td>
     <td>{{ car.dailyPrice }}</td>

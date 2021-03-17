@@ -13,11 +13,11 @@
     <td>{{ b.brandName }}</td>
   </tr>
 </table> -->
-<ul class="list-group">
+<ul class="list-group mt-2">
   <li [class]="getAllBrandClass()" (click)="setAllBrand()" routerLink="/cars">Tüm Markalar</li>
   <li routerLink="/cars/brands/{{brand.brandId}}" *ngFor="let brand of brands" (click)="setCurrentBrand(brand)" [class]="getCurrentBrandClass(brand)">
     {{ brand.brandName }}
   </li>
 </ul>
 
-<h5 class="brand mt-2" *ngIf="currentBrand">{{ currentBrand.brandName }} Seçtiniz</h5>
+<h5 class="header mt-2" *ngIf="currentBrand">{{ currentBrand.brandName }} Seçtiniz</h5>

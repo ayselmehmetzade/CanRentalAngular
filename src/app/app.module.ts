@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CarComponent } from './components/car/car.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { RentalDetailComponent } from './components/rental-detail/rental-detail.component';
+import { CarImageComponent } from './components/car-image/car-image.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { RentalDetailComponent } from './components/rental-detail/rental-detail.
     RentalComponent,
     CarDetailComponent,
     RentalDetailComponent,
+    CarImageComponent,
   ],
   imports: [
     BrowserModule, 

@@ -1,0 +1,10 @@
+<div class="row image-section">
+    <div *ngFor="let image of carImage" class="col-md-4 img-gallery">
+      <img width="100" height="100" [src]="getImagePath(image.imagePath)" [alt]="getImagePath(image.imagePath)"/>
+    </div>
+  </div>
+  <ul *ngIf="carDetail" class="list-group">
+    <li class="list-group-item">Brand Name: {{carDetail.brandName}}</li>
+    <li class="list-group-item">Color Name: {{carDetail.colorName}}</li>
+    <li class="list-group-item">Description : {{ carDetail.description }}</li>
+  </ul>
