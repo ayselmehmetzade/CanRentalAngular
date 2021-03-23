@@ -12,6 +12,7 @@ import { CarComponent } from './components/car/car.component';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { RentalDetailComponent } from './components/rental-detail/rental-detail.component';
 import { CarImageComponent } from './components/car-image/car-image.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CarImageComponent } from './components/car-image/car-image.component';
   imports: [
     BrowserModule, 
     AppRoutingModule, 
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
