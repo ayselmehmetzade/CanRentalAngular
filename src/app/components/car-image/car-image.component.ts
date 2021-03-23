@@ -37,9 +37,7 @@ export class CarImageComponent implements OnInit {
     });
   }
 
-  getImagePath(image: string) {
-    console.log("image");
-    
+  getImagePath(image: string) {    
     return this.imagePath + image;
   }
 

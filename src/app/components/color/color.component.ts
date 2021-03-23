@@ -24,7 +24,8 @@ export class ColorComponent implements OnInit {
 
   getCurrentColorClass(color: Color) {
     if (this.currentColor == color) {
-      return 'list-group-item list-group-item-primary';
+      return 'list-group-item list-group-item-dark';
+
     } else {
       return 'list-group-item';
     }
@@ -38,7 +39,8 @@ export class ColorComponent implements OnInit {
   }
   getAllColorClass() {
     if (!this.currentColor) {
-      return 'list-group-item list-group-item-primary';
+      return 'list-group-item list-group-item-dark';
+
     } else {
       return 'list-group-item';
     }
