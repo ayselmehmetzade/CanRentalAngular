@@ -14,6 +14,7 @@ import { RentalDetailComponent } from './components/rental-detail/rental-detail.
 import { CarImageComponent } from './components/car-image/car-image.component';
 import { FormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,

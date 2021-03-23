@@ -31,7 +31,9 @@ export class BrandComponent implements OnInit {
 
   getCurrentBrandClass(brand:Brand){
     if(brand==this.currentBrand){
+
       return "list-group-item list-group-item-dark"
+
     }
     else{
       return "list-group-item"
@@ -44,6 +46,7 @@ export class BrandComponent implements OnInit {
   getAllBrandClass(){
     if(!this.currentBrand){
       return "list-group-item list-group-item-dark"
+
     }
     else{
       return "list-group-item"
