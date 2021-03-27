@@ -10,8 +10,6 @@ import { CarDetailService } from 'src/app/services/car-detail.service';
 export class CarDetailComponent implements OnInit {
 
   cars: CarDetail[] = [];
-
-  dataLoaded=false;
   constructor(private carDetailService: CarDetailService) {}
 
   ngOnInit(): void {
@@ -21,7 +19,6 @@ export class CarDetailComponent implements OnInit {
   getCarDetail() {
     this.carDetailService.getCarDetail().subscribe((response) => {
       this.cars = response.data;
-      this.dataLoaded=true;
     });
   }
 }

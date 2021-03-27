@@ -1,6 +1,8 @@
-
+<div class="mb-3">
+  <label for="carFilterText" class="form-label">Marka Ara</label>
+  <input type="text" [(ngModel)]="carFilterText" class="form-control" id="carFilterText" placeholder="Arama İfadesi">
+</div>
 <table class="table table-dark table-striped mt-2">
-
   <thead>
     <tr>
       <th>Car Id</th>
@@ -8,18 +10,17 @@
       <th>Model Year</th>
       <th>Description</th>
       <th>Daily Price</th>
+      <th></th>
     </tr>
   </thead>
-
   <tbody>
-    <tr *ngFor="let car of cars" (click)="getCarDetailByCarId(car.id)" routerLink="/cars/carimages/{{car.id}}">
+    <tr *ngFor="let car of cars | carDetailFilter:carFilterText" (click)="getCarDetailByCarId(car.id)" routerLink="/cars/carimages/{{ car.id }}">
       <td>{{ car.id }}</td>
       <td>{{ car.brandId }}</td>
       <td>{{ car.modelYear }}</td>
       <td>{{ car.description }}</td>
       <td>{{ car.dailyPrice }}</td>
+      <td><button class=" btn btn-sm btn-outline-info">Kirala</button></td>
     </tr>
   </tbody>
- 
-
 </table>
