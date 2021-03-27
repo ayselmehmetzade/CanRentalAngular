@@ -1,21 +1,15 @@
-<!-- <div *ngIf="dataLoaded == false" class="spinner-border text-danger" role="status">
-  <span class="visually-hidden">Loading...</span>
+<div class="mb-3">
+  <label for="brandFilterText" class="form-label">Marka Ara</label>
+  <input type="text" [(ngModel)]="brandFilterText" class="form-control" id="brandFilterText" placeholder="Arama İfadesi">
 </div>
-<table *ngIf="dataLoaded == true"  class="table">
-  <thead>
-    <tr class="table-primary">
-      <th>Brand Id</th>
-      <th>Brand Name</th>
-    </tr>
-  </thead>
-  <tr *ngFor="let b of brands">
-    <td>{{ b.brandId }}</td>
-    <td>{{ b.brandName }}</td>
-  </tr>
-</table> -->
+<!-- <div *ngIf="filterText">
+  {{filterText}} aradınız
+</div> -->
+
+
 <ul class="list-group mt-2">
   <li [class]="getAllBrandClass()" (click)="setAllBrand()" routerLink="/cars">Tüm Markalar</li>
-  <li routerLink="/cars/brands/{{brand.brandId}}" *ngFor="let brand of brands" (click)="setCurrentBrand(brand)" [class]="getCurrentBrandClass(brand)">
+  <li routerLink="/cars/brands/{{brand.brandId}}" *ngFor="let brand of brands | brandFilter: brandFilterText" (click)="setCurrentBrand(brand)" [class]="getCurrentBrandClass(brand)">
     {{ brand.brandName }}
   </li>
 </ul>

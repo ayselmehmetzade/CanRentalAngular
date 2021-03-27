@@ -10,7 +10,7 @@
     <li class="list-group-item">Description : {{ carDetail.description }}</li>
   </ul> -->
   <div class="row">
-    <div *ngFor="let image of carImage" class="card" style="width: 18rem">
+    <div *ngFor="let image of carImage" class="card m-2" style="width: 18rem">
       <img class="card-img-top" width="100" height="50%" [src]="getImagePath(image.imagePath)"/>
       <div class="card-body">
         <h5 class="card-title">Araba Detayı</h5>

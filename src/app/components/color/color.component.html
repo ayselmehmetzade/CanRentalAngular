@@ -1,13 +1,14 @@
+<div class="mb-3">
+  <label for="colorFilterText" class="form-label">Renk Ara</label>
+  <input type="text" [(ngModel)]="colorFilterText" class="form-control" id="colorFilterText" placeholder="Arama İfadesi">
+</div>
+
 <ul class="list-group mt-2">
   <li [class]="getAllColorClass()" (click)="setAllColor()" routerLink="/cars">
     Tüm Renkler
   </li>
-  <li
-    routerLink="/cars/colors/{{ color.colorId }}"
-    *ngFor="let color of colors"
-    (click)="setCurrentColor(color)"
-    [class]="getCurrentColorClass(color)"
-  >
+  <li routerLink="/cars/colors/{{ color.colorId }}" *ngFor="let color of colors | colorFilter:colorFilterText" (click)="setCurrentColor(color)"
+    [class]="getCurrentColorClass(color)">
     {{ color.colorName }}
   </li>
 </ul>

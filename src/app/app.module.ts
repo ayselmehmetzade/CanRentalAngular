@@ -13,6 +13,9 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
 import { RentalDetailComponent } from './components/rental-detail/rental-detail.component';
 import { CarImageComponent } from './components/car-image/car-image.component';
 import { FormsModule } from '@angular/forms';
+import { BrandFilterPipe } from './pipes/brand-filter.pipe';
+import { ColorFilterPipe } from './pipes/color-filter.pipe';
+import { CarDetailFilterPipe } from './pipes/car-detail-filter.pipe';
 
 
 @NgModule({
@@ -27,6 +30,10 @@ import { FormsModule } from '@angular/forms';
     CarDetailComponent,
     RentalDetailComponent,
     CarImageComponent,
+    BrandFilterPipe,
+    ColorFilterPipe,
+    CarDetailFilterPipe
+   
   ],
   imports: [
     BrowserModule, 
