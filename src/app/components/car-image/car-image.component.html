@@ -1,14 +1,3 @@
-
-<!-- <div class="row image-section">
-    <div *ngFor="let image of carImage" class="col-md-4 img-gallery">
-      <img width="100" height="100" [src]="getImagePath(image.imagePath)" [alt]="getImagePath(image.imagePath)"/>
-    </div>
-  </div>
-  <ul *ngIf="carDetail" class="list-group">
-    <li class="list-group-item">Brand Name: {{carDetail.brandName}}</li>
-    <li class="list-group-item">Color Name: {{carDetail.colorName}}</li>
-    <li class="list-group-item">Description : {{ carDetail.description }}</li>
-  </ul> -->
   <div class="row">
     <div *ngFor="let image of carImage" class="card m-2" style="width: 18rem">
       <img class="card-img-top" width="100" height="50%" [src]="getImagePath(image.imagePath)"/>
@@ -19,7 +8,7 @@
           <li class="list-group-item">Renk Adı: {{ carDetail.colorName }}</li>
           <li class="list-group-item">Açıklama : {{ carDetail.description }}</li>
         </ul>
-        <button class="offset btn btn-sm btn-outline-primary">Detay</button>
+        <!-- <button class="offset btn btn-sm btn-outline-primary">Detay</button> -->
       </div>
     </div>
   </div>

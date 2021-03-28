@@ -6,12 +6,12 @@ import { CarDetail } from '../models/car-detail';
   name: 'carDetailFilter',
 })
 export class CarDetailFilterPipe implements PipeTransform {
-  transform(value: Car[], carDetailFilterText: string): Car[] {
+  transform(value: CarDetail[], carDetailFilterText: string): CarDetail[] {
     carDetailFilterText ? carDetailFilterText.toLocaleLowerCase() : '';
     return carDetailFilterText
       ? value.filter(
-        (c: Car) =>
-          c.id.toString().toLocaleLowerCase().indexOf(carDetailFilterText) !== -1 ||
+        (c: CarDetail) =>
+          c.carId.toString().toLocaleLowerCase().indexOf(carDetailFilterText) !== -1 ||
           c.colorId
             .toString()
             .toLocaleLowerCase()

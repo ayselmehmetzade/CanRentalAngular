@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Brand } from 'src/app/models/brand';
 import { Car } from 'src/app/models/car';
+import { CarDetail } from 'src/app/models/car-detail';
 import { CarImages } from 'src/app/models/car-images';
 import { Color } from 'src/app/models/color';
 import { BrandService } from 'src/app/services/brand.service';
@@ -15,12 +16,11 @@ import { ColorService } from 'src/app/services/color.service';
   styleUrls: ['./car.component.scss'],
 })
 export class CarComponent implements OnInit {
-  cars: Car[] = [];
-  brands:Brand[]=[];
-  colors: Color[]=[];
+  cars: CarDetail[] = [];
+  brands: Brand[] = [];
+  colors: Color[] = [];
   carImage: CarImages[] = [];
-  carFilterText="";
-
+  carFilterText = '';
 
   constructor(
     private carService: CarService,
@@ -49,15 +49,15 @@ export class CarComponent implements OnInit {
     });
   }
 
-  getBrands(){
-    this.brandService.getBrands().subscribe(response=>{
-      this.brands=response.data;
-    })
+  getBrands() {
+    this.brandService.getBrands().subscribe((response) => {
+      this.brands = response.data;
+    });
   }
-  getColors(){
-    this.colorService.getColors().subscribe(response=>{
-      this.colors=response.data;
-    })
+  getColors() {
+    this.colorService.getColors().subscribe((response) => {
+      this.colors = response.data;
+    });
   }
   getCarsByBrand(brandId: number) {
     this.carService.getCarsByBrand(brandId).subscribe((response) => {
@@ -71,8 +71,8 @@ export class CarComponent implements OnInit {
     });
   }
   getCarImage(carId: number) {
-    this.carImageService.getCarImagesById(carId).subscribe((reponse) => {
-      this.carImage = reponse.data;
+    this.carImageService.getCarImagesById(carId).subscribe((response) => {
+      this.carImage = response.data;
     });
   }
   getCarDetailByCarId(carId: number) {

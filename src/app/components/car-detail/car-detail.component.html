@@ -1,21 +1,20 @@
 <div class="row mt-2">
   <div class="col-md-4">
-    <select class="form-select" aria-label="Default select example">
-      <option selected>Marka Seçiniz</option>
-      <option *ngFor="let c of cars " value="1">{{c.brandName}}</option>
+    <select [(ngModel)]="brandId" class="form-select" aria-label="Default select example">
+      <option selected value="0">Marka Seçiniz</option>
+      <option *ngFor="let b of brands " [ngValue]="b.brandId">{{b.brandName}}</option>
     </select>
   </div>
   <div class="col-md-4">
-    <select class="form-select" aria-label="Default select example">
-      <option selected>Renk Seçiniz</option>
-      <option *ngFor="let c of cars " value="1">{{c.colorName}}</option>
+    <select [(ngModel)]="colorId" class="form-select" aria-label="Default select example">
+      <option selected value="0">Renk Seçiniz</option>
+      <option *ngFor="let c of colors " [ngValue]="c.colorId">{{c.colorName}} </option>
     </select>
   </div>
   <div class="col-md-4">
-    <button class="col-md-12 btn btn-dark">Ara</button>
+    <button (click)="filter()" class="col-md-12 btn btn-dark">Ara</button>
   </div>
 </div>
-
 
 <table class="table table-dark table-striped mt-2">
   <thead>

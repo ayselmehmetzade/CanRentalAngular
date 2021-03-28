@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { CarImages } from '../models/car-images';
 import { ListResponseModel } from '../models/list-response-model';
 
@@ -8,7 +9,7 @@ import { ListResponseModel } from '../models/list-response-model';
   providedIn: 'root',
 })
 export class CarImagesService {
-  apiUrl= 'https://localhost:44342/api/';
+  apiUrl= environment.apiUrl;
   constructor(private httpClient: HttpClient) {}
 
   getCarImages() : Observable<ListResponseModel<CarImages>>{
